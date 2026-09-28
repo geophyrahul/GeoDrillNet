@@ -12,7 +12,7 @@ The full pipeline — data loading, feature engineering, fold-safe scaling, wind
 
 ## Results — Experiment 008
 
-![Architecture diagram](results/exp008_cnn_transformer/01_architecture_diagram.png)
+![Architecture diagram](results/exp008_cnn_transformer/01_architecture_diagram.jpeg)
 
 Out-of-fold results, each well scored by a model that never saw it during training:
 
