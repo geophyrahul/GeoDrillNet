@@ -1,0 +1,31 @@
+Experiment 008 - CNN + Transformer (target-scaling fix) : result figures
+=======================================================================
+Figures built from the existing Exp 008 run (20260815_155904) - no retraining.
+372,673 parameters; hyper-parameters from a 150-trial Optuna search (15 completed, 135 pruned);
+5-fold GroupKFold by well on 773 training wells. Loss history parsed from the training log.
+
+Out-of-fold results (each well predicted by a model that never saw it)
+  RMSE all rows ................ 21.54 ft
+  RMSE after Prediction Start .. 21.33 ft   <- the competition metric region
+  MAE  after Prediction Start .. 16.02 ft
+  Median per-well RMSE ......... 14.48 ft
+  Per-fold RMSE after PS ....... 19.7 / 20.6 / 24.3 / 20.3 / 21.3 ft
+  Baseline (hold last known TVT constant after PS): 15.91 ft  -> model is WORSE than this baseline
+
+Training note: in every fold the loss became NaN for the last 8-12 epochs (shaded in figure 02).
+Early stopping kept the best weights from before the divergence, so the predictions are valid,
+but training is unstable (likely fp16 AMP overflow / high learning rate 4.3e-3).
+
+Figures
+  01 architecture diagram
+  02 loss curves (MSE + RMSE per fold, NaN epochs shaded)
+  03 RMSE per fold vs baseline
+  04 prediction quality: pred vs actual, dTVT histogram, error vs distance from PS
+  05 per-well RMSE distribution
+  06 map view of wells coloured by error (like PPT slide 10)
+  07 3D view of wells coloured by fold (like PPT slide 11)
+  08-13 PPT-style well panels (GR log / well path + formation tops / TVT plot) with
+        Exp 008 prediction for held-out wells: 2 good, 2 typical, 2 hard
+  14-16 PPT-style panels for the 3 test wells (no ground truth; these wells also appear in
+        train, so no score is shown for them)
+  17 Optuna search history, 18 self-attention map, 19-20 the notebook's own figures

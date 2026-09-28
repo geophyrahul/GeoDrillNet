@@ -1,0 +1,16 @@
+{
+  "oof_rmse_all_rows": 21.538944222845085,
+  "oof_rmse_after_ps": 21.32537220272011,
+  "oof_mae_after_ps": 16.016732995127615,
+  "baseline_constant_tvt_rmse_after_ps": 15.909852870734563,
+  "n_wells": 773,
+  "n_params": "372,673",
+  "per_fold_rmse_after_ps": {
+    "0": 19.736,
+    "1": 20.64,
+    "2": 24.278,
+    "3": 20.336,
+    "4": 21.346
+  },
+  "median_well_rmse_after_ps": 14.4826965303956
+}

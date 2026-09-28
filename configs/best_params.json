@@ -1,0 +1,22 @@
+{
+  "best_value": 14.218578485339517,
+  "best_params": {
+    "n_cnn_layers": 4,
+    "cnn_base_channels": 32,
+    "d_model": 128,
+    "cnn_kernel_size": 7,
+    "cnn_dropout": 0.04879845655289969,
+    "geology_embed_dim": 16,
+    "n_transformer_layers": 1,
+    "n_transformer_heads": 2,
+    "transformer_ff_dim": 256,
+    "transformer_dropout": 0.21503639919897471,
+    "head_hidden_dim": 256,
+    "head_dropout": 0.0045441726980578225,
+    "learning_rate": 0.004279143773469827,
+    "weight_decay": 0.0018620673726764112,
+    "batch_size": 64,
+    "grad_clip_norm": 0.169775074892326,
+    "window_size": 256
+  }
+}

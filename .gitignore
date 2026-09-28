@@ -1,0 +1,16 @@
+# Data & training run artifacts (excluded — see README "Data")
+/data/
+outputs_cnn_transformer/
+*.pt
+*.pth
+*.pkl
+*.db
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
